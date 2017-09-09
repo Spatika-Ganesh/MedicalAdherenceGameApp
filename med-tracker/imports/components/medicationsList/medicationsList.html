@@ -8,6 +8,7 @@
     <input ng-model="$ctrl.newMedication" type="text" name="text" placeholder="Type to add new medications" />
     <input ng-model="$ctrl.newMedicationDescription" type="text" name="text" placeholder="Type to add new medication Description"/>
     <input ng-model="$ctrl.newMedicationType" type="text" name="text" placeholder="Type to add new medication Type"/>
+    <input ng-model="$ctrl.chronic" type="text" name="text" placeholder="Chronic/Non-chronic?" />
   </form>
 </div>
 
@@ -20,7 +21,7 @@
     <input type="checkbox" ng-checked="medication.checked" ng-click="$ctrl.setChecked(medication)" class="toggle-checked"/>
 
     <span class="text">
-      {{medication.text}} {{ medication.instructions}}
+    {{prescriptionID}}  {{medication.text}} {{ medication.instructions}} {{medication.type}} {{medication.chronic}}
     </span>
   </li>
 </ul>

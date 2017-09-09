@@ -19,13 +19,14 @@ class MedicationsListCtrl {
       }
     })
   }
-  addMedication(newMedication, newMedicationDescription, newMedicationType, newMedicationID) {
+  addMedication(newMedication, newMedicationDescription, newMedicationType, newMedicationID, chronic) {
     // Insert a medication into the collection
     Medications.insert({
       id: prescriptionID,
       text: newMedication,
       instructions: newMedicationDescription,
       type: newMedicationType,
+      chronic: chronic,
       createdAt: new Date()
     });
     // Clear form
