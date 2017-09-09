@@ -1,8 +1,8 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
-import todosList from '../imports/components/todosList/todosList';
+import medicationsList from '../imports/components/medicationsList/medicationsList';
 
 angular.module('med-tracker', [
   angularMeteor,
-  todosList.name
+  medicationsList.name
 ]);

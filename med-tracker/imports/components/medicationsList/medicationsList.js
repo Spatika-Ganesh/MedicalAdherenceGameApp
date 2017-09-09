@@ -2,9 +2,9 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import { Medications } from '../../api/medications.js';
 
-import template from './todosList.html';
+import template from './medicationsList.html';
 
-class TodosListCtrl {
+class MedicationsListCtrl {
   constructor($scope) {
     $scope.viewModel(this);
 
@@ -44,10 +44,10 @@ class TodosListCtrl {
  }
 }
 
-export default angular.module('todosList', [
+export default angular.module('medicationsList', [
   angularMeteor
 ])
-  .component('todosList', {
-    templateUrl: 'imports/components/todosList/todosList.html',
-    controller: ['$scope', TodosListCtrl]
+  .component('medicationsList', {
+    templateUrl: 'imports/components/medicationsList/medicationsList.html',
+    controller: ['$scope', MedicationsListCtrl]
   });
