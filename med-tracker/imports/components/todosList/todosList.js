@@ -1,6 +1,6 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
-import { Tasks } from '../../api/tasks.js';
+import { Medications } from '../../api/medications.js';
 
 import template from './todosList.html';
 
@@ -9,9 +9,9 @@ class TodosListCtrl {
     $scope.viewModel(this);
 
     this.helpers({
-      tasks() {
-        // Show newest tasks at the top
-        return Tasks.find({}, {
+      medications() {
+        // Show newest medications at the top
+        return Medications.find({}, {
           sort: {
             createdAt: -1
           }
@@ -19,28 +19,28 @@ class TodosListCtrl {
       }
     })
   }
-  addTask(newTask) {
-    // Insert a task into the collection
-    Tasks.insert({
-      text: newTask,
+  addMedication(newMedication) {
+    // Insert a medication into the collection
+    Medications.insert({
+      text: newMedication,
       createdAt: new Date
     });
 
     // Clear form
-    this.newTask = '';
+    this.newMedication = '';
   }
 
-  setChecked(task) {
+  setChecked(medication) {
    // Set the checked property to the opposite of its current value
-   Tasks.update(task._id, {
+   Medications.update(medication._id, {
      $set: {
-       checked: !task.checked
+       checked: !medication.checked
      },
    });
  }
 
- removeTask(task) {
-   Tasks.remove(task._id);
+ removeMedication(medication) {
+   Medications.remove(medication._id);
  }
 }
 
