@@ -1,9 +1,15 @@
 <header>
   <h1>Patient Medications List</h1>
 
-  <form class="new-medication" ng-submit="$ctrl.addMedication($ctrl.newMedication)">
-    <input ng-model="$ctrl.newMedication" type="text" name="text" placeholder="Type to add new medications"/>
+<div class="addPrescription" >
+ <h3>  Add New Prescription </h3>
+  <form class="new-medication" ng-submit="$ctrl.addMedication($ctrl.newMedication, $ctrl.newMedicationDescription, $ctrl.newMedicationType, $ctrl.prescriptionID)">
+     <input ng-model="$ctrl.prescriptionID" type="text" name="text" placeholder="Prescription ID" />
+    <input ng-model="$ctrl.newMedication" type="text" name="text" placeholder="Type to add new medications" />
+    <input ng-model="$ctrl.newMedicationDescription" type="text" name="text" placeholder="Type to add new medication Description"/>
+    <input ng-model="$ctrl.newMedicationType" type="text" name="text" placeholder="Type to add new medication Type"/>
   </form>
+</div>
 
 </header>
 
@@ -14,7 +20,7 @@
     <input type="checkbox" ng-checked="medication.checked" ng-click="$ctrl.setChecked(medication)" class="toggle-checked"/>
 
     <span class="text">
-      {{medication.text}}
+      {{medication.text}} {{ medication.instructions}}
     </span>
   </li>
 </ul>

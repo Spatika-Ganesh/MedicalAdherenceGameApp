@@ -19,15 +19,21 @@ class MedicationsListCtrl {
       }
     })
   }
-  addMedication(newMedication) {
+  addMedication(newMedication, newMedicationDescription, newMedicationType, newMedicationID) {
     // Insert a medication into the collection
     Medications.insert({
+      id: prescriptionID,
       text: newMedication,
-      createdAt: new Date
+      instructions: newMedicationDescription,
+      type: newMedicationType,
+      createdAt: new Date()
     });
-
     // Clear form
     this.newMedication = '';
+  }
+
+  getMedication(prescriptionID) {
+
   }
 
   setChecked(medication) {
@@ -38,6 +44,7 @@ class MedicationsListCtrl {
      },
    });
  }
+
 
  removeMedication(medication) {
    Medications.remove(medication._id);
