@@ -1,0 +1,29 @@
+<body>
+  <div class="container">
+    <header>
+      <h1>Prescription List ({{incompleteCount}})</h1>
+
+      <label class="hide-completed">
+        <input type="checkbox" />
+        Hide Completed Medications
+      </label>
+      {{> loginButtons}}
+
+      {{#if currentUser}}
+             <form class="new-medication">
+               <input type="text" name="text" placeholder="Type to add new medications" />
+             </form>
+           {{/if}}
+      <form class="new-medication">
+        <input type="text" name="text" placeholder="Type to add new medications" />
+      </form>
+
+    </header>
+
+    <ul>
+      {{#each medications}}
+        {{> medication}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
