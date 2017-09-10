@@ -2,9 +2,11 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import template from './avatarProgressor.html';
 
+//$mdThemingProvider.setDefaultTheme('altTheme');
 
 class AvatarProgressorCtrl {
     constructor($scope) {
+        counter: number = 0;
       $scope.viewModel(this);
   }
   TakenMedsCliker() {
