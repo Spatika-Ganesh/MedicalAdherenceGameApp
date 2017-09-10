@@ -19,7 +19,7 @@ class MedicationsListCtrl {
       }
     })
   }
-  addMedication(newMedication, newMedicationDescription, newMedicationType, newMedicationID, chronic) {
+  addMedication(newMedication, newMedicationDescription, newMedicationType, newMedicationID, chronic, tabsPerDose, dosePerDay, daysTotalPrescribed) {
     // Insert a medication into the collection
     Medications.insert({
       id: prescriptionID,
@@ -27,14 +27,16 @@ class MedicationsListCtrl {
       instructions: newMedicationDescription,
       type: newMedicationType,
       chronic: chronic,
+      tabsPerDose: newMedicationTabsPerDose,
+      dosePerDay: newMedicationDosePerDay,
+      daysTotalPrescribed: newMedicationDaysTotalPrescribed,
       createdAt: new Date()
     });
     // Clear form
     this.newMedication = '';
   }
 
-  getMedication(prescriptionID) {
-
+  takeMedication(prescriptionID, daysLeft) {
   }
 
   setChecked(medication) {
